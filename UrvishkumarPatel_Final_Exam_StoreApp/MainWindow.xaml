@@ -1,0 +1,57 @@
+﻿<Window x:Class="UrvishkumarPatel_Final_Exam_StoreApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UrvishkumarPatel_Final_Exam_StoreApp"
+        mc:Ignorable="d"
+        Title="Store" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <Label Name="forSaleLabel" Content="For Sale"  Grid.Row="0" Grid.Column="1"/>
+        <DataGrid Name="SaleDataGrid" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="5" AutoGenerateColumns="False"  CanUserDeleteRows="False" FontWeight="Bold">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Item" Binding="{Binding Item, Mode=OneWay}" Width="2*" FontWeight="Bold" />
+                <DataGridTextColumn Header="Price" Binding="{Binding Price, Mode=OneWay}" Width="1*" FontWeight="Bold" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Serial" Binding="{Binding SerialNumber, Mode=OneWay}" Width="2*" FontWeight="Bold"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Name="shoppingCartLabel" Content="Shopping Cart"  Grid.Row="0" Grid.Column="4"/>
+        <DataGrid Name="shoppingCartDataGrid" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="5" AutoGenerateColumns="False"  CanUserDeleteRows="False" FontWeight="Bold">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Item" Binding="{Binding Item, Mode=OneWay}" Width="2*" FontWeight="Bold" />
+                <DataGridTextColumn Header="Price" Binding="{Binding Price, Mode=OneWay}" Width="1*" FontWeight="Bold" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Serial" Binding="{Binding SerialNumber, Mode=OneWay}" Width="2*" FontWeight="Bold"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="placeInCart" Content="Place In Cart" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" Click="placeInCart_Click"></Button>
+        <Button Name="viewItemInfo" Content="View Item Info" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="3" Click="viewItemInfo_Click"></Button>
+        <Button Name="returnToShelf" Content="Return To Shelf" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="3" Click="returnToShelf_Click"></Button>
+
+        <TextBlock Text="Total" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" FontSize="36"/>
+        <TextBlock Name="totalPrice" Text="0" Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="2" FontSize="72"/>
+        <TextBlock Text="$" Grid.Row="3" Grid.RowSpan="2" Grid.Column="8" FontSize="72"/>
+        <Button Name="purchaseButton" Content="Purchase" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="3" HorizontalAlignment="Right" Margin="0,0,-0.4,0" Width="264" Click="purchaseButton_Click"></Button>
+    </Grid>
+</Window>
